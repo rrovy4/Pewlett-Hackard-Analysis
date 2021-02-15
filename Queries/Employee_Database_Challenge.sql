@@ -4,8 +4,8 @@ select e.emp_no, e.first_name, e.last_name, t.title, t.from_date, t.to_date
 into retirement_titles
 from employees e
 join titles t on (e.emp_no = t.emp_no)
-where extract(year from e.birth_date) between 1952 and 1955;
-order by e.emp_no
+where extract(year from e.birth_date) between 1952 and 1955
+order by e.emp_no;
 
 select distinct on (emp_no) first_name, last_name, title, from_date, to_date
 into unique_titles
